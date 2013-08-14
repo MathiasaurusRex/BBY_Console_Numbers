@@ -4,7 +4,7 @@
 // @description    Brings back page numbers to Console.Deals.BestBuy.Com
 // @include        https://console.deals.bestbuy.com/*
 // @match          https://console.deals.bestbuy.com/*
-// @version 1.1
+// @version 1.6
 // ==/UserScript==
 
 
@@ -19,9 +19,9 @@ function addFunction(func, exec) {
 // Hijacks Current current Grid Key from grid.js and injects it into page title.
 function hijackFunction () {
 	function updateTitleToPageNumber() {
-		document.title = thisGM.currentGridKey + ' = Current Page';
+		document.title = thisGM.currentGridKey + ' | ' + thisGM.catalogInfo.dates;
 	}
-		window.setInterval(updateTitleToPageNumber, 1000);
+		window.setInterval(updateTitleToPageNumber, 4000);
 }
 
 //Inject the function and execute it:
